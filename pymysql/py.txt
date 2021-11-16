@@ -1,0 +1,22 @@
+import sys
+import logging
+import pymysql
+#rds settings
+rds_host = "wingo-db.cu9zbgm3hjg0.ap-south-1.rds.amazonaws.com"
+name = "admin"
+password = "test1234"
+db_name = "wingo"
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+
+def handler(event, context):
+    try:
+        conn = pymysql.connect(host=rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
+        data = event['context']['http-method']
+        return data
+    except pymysql.MySQLError as e:
+        logger.error("ERROR: Unexpected error: Could not connect to MySQL instance.")
+        logger.error(e)
+        sys.exit()

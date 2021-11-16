@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF=8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Doc</title>
+	<link rel="stylesheet" href="xxx">
+</head>
+
+<body class="container">
+	<h1>Emp</h1>
+	<table id="table" class="table">
+	<button onclick="loaddata();">Click to show</button>
+	</table>
+	<script>
+		function loaddata() {
+			console.log('windows... loaded');
+			
+		}
+		
+		function show(empl){
+			let table = document.getElementById('table');
+			for(let i = 0; i < employee.length; i++){
+				let obj = employee[i];
+				let row = document.createElement('tr');
+				let id = document.createElement('td');
+				let name = document.createElement('td');
+				let salary = document.createElement('td');
+			}
+			
+			id.innerHTML = obj.id
+			name.innerHTML = obj.employee_name
+			salary.innerHTML = obj.employee_salary
+			
+			row.appendChild(id)
+			row.appendChild(name)
+			row.appendChild(salary)
+			
+		
+		
+		}
+	
+	</script>
